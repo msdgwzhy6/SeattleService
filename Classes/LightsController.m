@@ -1,15 +1,15 @@
 //
-//  FirstViewController.m
+//  LightsController.m
 //  SeattleService
 //
 //  Created by JD Wallace on 1/4/10.
 //  Copyright jdwallace.com 2010. All rights reserved.
 //
 
-#import "FirstViewController.h"
+#import "LightsController.h"
 
 
-@implementation FirstViewController
+@implementation LightsController
 
 
 /*
@@ -28,18 +28,18 @@
 }
 */
 
-/*
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
+	NSLog(@"Lights View Loaded");
 }
-*/
 
 /*
-// Override to allow orientations other than the default portrait orientation.
+//Override to allow orientations other than the default portrait orientation.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    //return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 */
 

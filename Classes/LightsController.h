@@ -1,5 +1,5 @@
 //
-//  FirstViewController.h
+//  LightsController.h
 //  SeattleService
 //
 //  Created by JD Wallace on 1/4/10.
@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface FirstViewController : UIViewController {
+@interface LightsController : UIViewController {
 
 }
 
