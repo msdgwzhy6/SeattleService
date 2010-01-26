@@ -20,6 +20,8 @@
     
     // Add the tab bar controller's current view as a subview of the window
     [window addSubview:tabBarController.view];
+	[window makeKeyAndVisible];
+	
 	// Create a location manager instance to determine if location services are enabled. This manager instance will be
     // immediately released afterwards.
     CLLocationManager *manager = [[CLLocationManager alloc] init];

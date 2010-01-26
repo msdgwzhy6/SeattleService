@@ -10,6 +10,25 @@
 
 
 @implementation PotholesController
+@synthesize issueTypeField;
+@synthesize locationField;
+@synthesize emailField;
+@synthesize nameField;
+@synthesize phoneField;
+@synthesize descField;
+
+- (IBAction)backgroundTap:(id)sender {
+	[issueTypeField resignFirstResponder];
+	[locationField resignFirstResponder];
+	[emailField resignFirstResponder];
+	[nameField resignFirstResponder];
+	[phoneField resignFirstResponder];
+	[descField resignFirstResponder];
+}
+
+- (IBAction)textFieldDoneEditing:(id)sender {
+	[sender resignFirstResponder];
+}
 
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -55,6 +74,12 @@
 
 
 - (void)dealloc {
+	[issueTypeField release];
+	[locationField release];
+	[emailField release];
+	[nameField release];
+	[phoneField release];
+	[descField release];
     [super dealloc];
 }
 
