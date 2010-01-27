@@ -22,6 +22,8 @@
 		8510C22E10F9A27A00428B1A /* HotlinesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8510C22D10F9A27A00428B1A /* HotlinesController.m */; };
 		851E53FC10FA9086007B0F2B /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 851E53FB10FA9086007B0F2B /* AddressBook.framework */; };
 		851E54651105638B007B0F2B /* PotholesTypePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 851E54641105638B007B0F2B /* PotholesTypePicker.m */; };
+		8526CEED110F7D5400ACE718 /* blueButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 8526CEEB110F7D5400ACE718 /* blueButton.png */; };
+		8526CEEE110F7D5400ACE718 /* whiteButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 8526CEEC110F7D5400ACE718 /* whiteButton.png */; };
 		85326EDB110EB1B7000943EE /* toolicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 85326EDA110EB1B7000943EE /* toolicon.png */; };
 		8553F85A10F852B50041DA8C /* Lights.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8553F85910F852B50041DA8C /* Lights.xib */; };
 		8553F86110F853360041DA8C /* Graffiti.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8553F86010F853360041DA8C /* Graffiti.xib */; };
@@ -52,6 +54,8 @@
 		851E53FB10FA9086007B0F2B /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		851E54631105638B007B0F2B /* PotholesTypePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PotholesTypePicker.h; sourceTree = "<group>"; };
 		851E54641105638B007B0F2B /* PotholesTypePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PotholesTypePicker.m; sourceTree = "<group>"; };
+		8526CEEB110F7D5400ACE718 /* blueButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueButton.png; sourceTree = "<group>"; };
+		8526CEEC110F7D5400ACE718 /* whiteButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteButton.png; sourceTree = "<group>"; };
 		85326EDA110EB1B7000943EE /* toolicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toolicon.png; sourceTree = "<group>"; };
 		8553F85910F852B50041DA8C /* Lights.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Lights.xib; sourceTree = "<group>"; };
 		8553F86010F853360041DA8C /* Graffiti.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Graffiti.xib; sourceTree = "<group>"; };
@@ -79,18 +83,9 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				28216C950DB411BC00E5133A /* LightsController.h */,
-				28216C960DB411BC00E5133A /* LightsController.m */,
+				8526CF5E110FC12E00ACE718 /* View Controllers */,
 				1D3623240D0F684500981E51 /* SeattleServiceAppDelegate.h */,
 				1D3623250D0F684500981E51 /* SeattleServiceAppDelegate.m */,
-				8510C17D10F9977A00428B1A /* GraffitiController.h */,
-				8510C17E10F9977A00428B1A /* GraffitiController.m */,
-				8510C22910F9A26900428B1A /* PotholesController.h */,
-				8510C22A10F9A26900428B1A /* PotholesController.m */,
-				8510C22C10F9A27A00428B1A /* HotlinesController.h */,
-				8510C22D10F9A27A00428B1A /* HotlinesController.m */,
-				851E54631105638B007B0F2B /* PotholesTypePicker.h */,
-				851E54641105638B007B0F2B /* PotholesTypePicker.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -127,6 +122,8 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8526CEEB110F7D5400ACE718 /* blueButton.png */,
+				8526CEEC110F7D5400ACE718 /* whiteButton.png */,
 				85326EDA110EB1B7000943EE /* toolicon.png */,
 				8553F85910F852B50041DA8C /* Lights.xib */,
 				8553F86010F853360041DA8C /* Graffiti.xib */,
@@ -149,6 +146,23 @@
 				851E53FB10FA9086007B0F2B /* AddressBook.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8526CF5E110FC12E00ACE718 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8510C17D10F9977A00428B1A /* GraffitiController.h */,
+				8510C17E10F9977A00428B1A /* GraffitiController.m */,
+				8510C22910F9A26900428B1A /* PotholesController.h */,
+				8510C22A10F9A26900428B1A /* PotholesController.m */,
+				8510C22C10F9A27A00428B1A /* HotlinesController.h */,
+				8510C22D10F9A27A00428B1A /* HotlinesController.m */,
+				851E54631105638B007B0F2B /* PotholesTypePicker.h */,
+				851E54641105638B007B0F2B /* PotholesTypePicker.m */,
+				28216C950DB411BC00E5133A /* LightsController.h */,
+				28216C960DB411BC00E5133A /* LightsController.m */,
+			);
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,6 +213,8 @@
 				8553F86110F853360041DA8C /* Graffiti.xib in Resources */,
 				8553F86310F853400041DA8C /* Hotlines.xib in Resources */,
 				85326EDB110EB1B7000943EE /* toolicon.png in Resources */,
+				8526CEED110F7D5400ACE718 /* blueButton.png in Resources */,
+				8526CEEE110F7D5400ACE718 /* whiteButton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

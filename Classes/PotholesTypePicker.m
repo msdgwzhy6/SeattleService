@@ -73,11 +73,6 @@ clickedButtonAtIndex: (NSInteger)buttonIndex
 	[actionSheet addSubview:pickerView];
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
-{
-	return YES;
-}
-
 - (void) viewDidLoad
 {
 	self.navigationItem.rightBarButtonItem = BARBUTTON(@"Action",

@@ -16,6 +16,7 @@
 	UITextField *nameField;
 	UITextField *phoneField;
 	UITextField *descField;
+	UIButton *submitButton;
 }
 @property (nonatomic, retain) IBOutlet UITextField *issueTypeField;
 @property (nonatomic, retain) IBOutlet UITextField *locationField;
@@ -23,6 +24,8 @@
 @property (nonatomic, retain) IBOutlet UITextField *nameField;
 @property (nonatomic, retain) IBOutlet UITextField *phoneField;
 @property (nonatomic, retain) IBOutlet UITextField *descField;
+@property (nonatomic, retain) IBOutlet UIButton *submitButton;
 - (IBAction)backgroundTap:(id)sender;
 - (IBAction)textFieldDoneEditing:(id)sender;
+- (IBAction)submitForm:(id)sender;
 @end
