@@ -32,7 +32,6 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
-	NSLog(@"Lights View Loaded");
 }
 
 - (void)didReceiveMemoryWarning {
@@ -50,6 +49,10 @@
 
 - (void)dealloc {
     [super dealloc];
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
 @end

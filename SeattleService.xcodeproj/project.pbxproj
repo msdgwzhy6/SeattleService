@@ -22,7 +22,6 @@
 		8510C22B10F9A26900428B1A /* PotholesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8510C22A10F9A26900428B1A /* PotholesController.m */; };
 		8510C22E10F9A27A00428B1A /* HotlinesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8510C22D10F9A27A00428B1A /* HotlinesController.m */; };
 		851E53FC10FA9086007B0F2B /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 851E53FB10FA9086007B0F2B /* AddressBook.framework */; };
-		851E54651105638B007B0F2B /* PotholesTypePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 851E54641105638B007B0F2B /* PotholesTypePicker.m */; };
 		8526CEED110F7D5400ACE718 /* blueButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 8526CEEB110F7D5400ACE718 /* blueButton.png */; };
 		8526CEEE110F7D5400ACE718 /* whiteButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 8526CEEC110F7D5400ACE718 /* whiteButton.png */; };
 		8535C3781112520C00243FA1 /* Pothole.png in Resources */ = {isa = PBXBuildFile; fileRef = 8535C3771112520C00243FA1 /* Pothole.png */; };
@@ -56,8 +55,6 @@
 		8510C22C10F9A27A00428B1A /* HotlinesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotlinesController.h; sourceTree = "<group>"; };
 		8510C22D10F9A27A00428B1A /* HotlinesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotlinesController.m; sourceTree = "<group>"; };
 		851E53FB10FA9086007B0F2B /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
-		851E54631105638B007B0F2B /* PotholesTypePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PotholesTypePicker.h; sourceTree = "<group>"; };
-		851E54641105638B007B0F2B /* PotholesTypePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PotholesTypePicker.m; sourceTree = "<group>"; };
 		8526CEEB110F7D5400ACE718 /* blueButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueButton.png; sourceTree = "<group>"; };
 		8526CEEC110F7D5400ACE718 /* whiteButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteButton.png; sourceTree = "<group>"; };
 		8535C3771112520C00243FA1 /* Pothole.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pothole.png; sourceTree = "<group>"; };
@@ -166,8 +163,6 @@
 				8510C22A10F9A26900428B1A /* PotholesController.m */,
 				8510C22C10F9A27A00428B1A /* HotlinesController.h */,
 				8510C22D10F9A27A00428B1A /* HotlinesController.m */,
-				851E54631105638B007B0F2B /* PotholesTypePicker.h */,
-				851E54641105638B007B0F2B /* PotholesTypePicker.m */,
 				28216C950DB411BC00E5133A /* LightsController.h */,
 				28216C960DB411BC00E5133A /* LightsController.m */,
 			);
@@ -243,7 +238,6 @@
 				8510C17F10F9977A00428B1A /* GraffitiController.m in Sources */,
 				8510C22B10F9A26900428B1A /* PotholesController.m in Sources */,
 				8510C22E10F9A27A00428B1A /* HotlinesController.m in Sources */,
-				851E54651105638B007B0F2B /* PotholesTypePicker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
