@@ -25,12 +25,14 @@
 
 - (void)pickIssue: (id)sender
 {	
+	issueTypeButton.enabled = NO;
 	UIView *controllersView = [self view];
-	 issuePickerView = [[UIPickerView alloc]init];
-	//issuePickerView.tag = 101;
+	issuePickerView = [[UIPickerView alloc]init];
+	issuePickerView.autoresizingMask = (UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight);
 	issuePickerView.delegate = self;
 	issuePickerView.dataSource = self;
 	issuePickerView.showsSelectionIndicator = YES;
+	[issuePickerView selectRow:[pickerData indexOfObject:issueTypeButton.titleLabel.text] inComponent:0 animated:NO];
 	CGRect frame = issuePickerView.frame;
 	frame.origin.y = controllersView.frame.size.height;
 	issuePickerView.frame = frame;
@@ -69,7 +71,7 @@
 	UIImage *stretchableButtonImagePressed = [buttonImagePressed stretchableImageWithLeftCapWidth:12 topCapHeight:0];
 	[submitButton setBackgroundImage:stretchableButtonImagePressed forState:UIControlStateHighlighted];
 	
-	NSArray *array = [[NSArray alloc] initWithObjects:@"Minor Paving Repairs", @"Street Signs/Traffic Signals", @"Damaged Sidewalks", nil];
+	NSArray *array = [[NSArray alloc] initWithObjects:@"Minor Paving Repairs", @"Street Signs", @"Traffic Signals", @"Damaged Sidewalks", nil];
 	self.pickerData = array;
 	[issueTypeButton setTitle:[pickerData objectAtIndex:0]
 					 forState:UIControlStateNormal];
@@ -150,6 +152,7 @@ numberOfRowsInComponent: (NSInteger)component
 	[UIView setAnimationDuration:0.30f];
 	pickerView.transform = CGAffineTransformMakeTranslation(0, pickerView.frame.size.height);
 	[UIView commitAnimations];
+	issueTypeButton.enabled = YES;
 }
 
 -(void)animationDidStop:(NSString *)animationID finished:(NSNumber *)finished context:(void *)context
