@@ -11,13 +11,11 @@
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
-		28216C970DB411BC00E5133A /* LightsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28216C960DB411BC00E5133A /* LightsController.m */; };
 		282CCBFE0DB6C98000C4EA27 /* Potholes.xib in Resources */ = {isa = PBXBuildFile; fileRef = 282CCBFD0DB6C98000C4EA27 /* Potholes.xib */; };
 		288765080DF74369002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765070DF74369002DB57D /* CoreGraphics.framework */; };
 		28AD73880D9D96C1002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD73870D9D96C1002E5188 /* MainWindow.xib */; };
 		8501A68F11124879006AF24C /* Light.png in Resources */ = {isa = PBXBuildFile; fileRef = 8501A68E11124879006AF24C /* Light.png */; };
 		8501F75010FA5E130097F785 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8501F74F10FA5E130097F785 /* CFNetwork.framework */; };
-		8510C17F10F9977A00428B1A /* GraffitiController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8510C17E10F9977A00428B1A /* GraffitiController.m */; };
 		8510C1ED10F9A04E00428B1A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8510C1EC10F9A04E00428B1A /* CoreLocation.framework */; };
 		8510C22B10F9A26900428B1A /* PotholesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8510C22A10F9A26900428B1A /* PotholesController.m */; };
 		8510C22E10F9A27A00428B1A /* HotlinesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8510C22D10F9A27A00428B1A /* HotlinesController.m */; };
@@ -26,8 +24,6 @@
 		8526CEEE110F7D5400ACE718 /* whiteButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 8526CEEC110F7D5400ACE718 /* whiteButton.png */; };
 		8535C3781112520C00243FA1 /* Pothole.png in Resources */ = {isa = PBXBuildFile; fileRef = 8535C3771112520C00243FA1 /* Pothole.png */; };
 		8535C37B1112535D00243FA1 /* Graffiti.png in Resources */ = {isa = PBXBuildFile; fileRef = 8535C37A1112535D00243FA1 /* Graffiti.png */; };
-		8553F85A10F852B50041DA8C /* Lights.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8553F85910F852B50041DA8C /* Lights.xib */; };
-		8553F86110F853360041DA8C /* Graffiti.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8553F86010F853360041DA8C /* Graffiti.xib */; };
 		8553F86310F853400041DA8C /* Hotlines.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8553F86210F853400041DA8C /* Hotlines.xib */; };
 		859EE1BE111254F200F51935 /* Hotlines.png in Resources */ = {isa = PBXBuildFile; fileRef = 859EE1BD111254F200F51935 /* Hotlines.png */; };
 /* End PBXBuildFile section */
@@ -38,8 +34,6 @@
 		1D3623250D0F684500981E51 /* SeattleServiceAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeattleServiceAppDelegate.m; sourceTree = "<group>"; };
 		1D6058910D05DD3D006BFB54 /* Services.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Services.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		28216C950DB411BC00E5133A /* LightsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LightsController.h; sourceTree = "<group>"; };
-		28216C960DB411BC00E5133A /* LightsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LightsController.m; sourceTree = "<group>"; };
 		282CCBFD0DB6C98000C4EA27 /* Potholes.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Potholes.xib; sourceTree = "<group>"; };
 		288765070DF74369002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		28A0AB4B0D9B1048005BE974 /* SeattleService_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeattleService_Prefix.pch; sourceTree = "<group>"; };
@@ -47,8 +41,6 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8501A68E11124879006AF24C /* Light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Light.png; sourceTree = "<group>"; };
 		8501F74F10FA5E130097F785 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
-		8510C17D10F9977A00428B1A /* GraffitiController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraffitiController.h; sourceTree = "<group>"; };
-		8510C17E10F9977A00428B1A /* GraffitiController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraffitiController.m; sourceTree = "<group>"; };
 		8510C1EC10F9A04E00428B1A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		8510C22910F9A26900428B1A /* PotholesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PotholesController.h; sourceTree = "<group>"; };
 		8510C22A10F9A26900428B1A /* PotholesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PotholesController.m; sourceTree = "<group>"; };
@@ -59,8 +51,6 @@
 		8526CEEC110F7D5400ACE718 /* whiteButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteButton.png; sourceTree = "<group>"; };
 		8535C3771112520C00243FA1 /* Pothole.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pothole.png; sourceTree = "<group>"; };
 		8535C37A1112535D00243FA1 /* Graffiti.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Graffiti.png; sourceTree = "<group>"; };
-		8553F85910F852B50041DA8C /* Lights.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Lights.xib; sourceTree = "<group>"; };
-		8553F86010F853360041DA8C /* Graffiti.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Graffiti.xib; sourceTree = "<group>"; };
 		8553F86210F853400041DA8C /* Hotlines.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Hotlines.xib; sourceTree = "<group>"; };
 		859EE1BD111254F200F51935 /* Hotlines.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Hotlines.png; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* SeattleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SeattleService-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
@@ -131,8 +121,6 @@
 				8526CEEB110F7D5400ACE718 /* blueButton.png */,
 				8535C37A1112535D00243FA1 /* Graffiti.png */,
 				8526CEEC110F7D5400ACE718 /* whiteButton.png */,
-				8553F85910F852B50041DA8C /* Lights.xib */,
-				8553F86010F853360041DA8C /* Graffiti.xib */,
 				8553F86210F853400041DA8C /* Hotlines.xib */,
 				282CCBFD0DB6C98000C4EA27 /* Potholes.xib */,
 				28AD73870D9D96C1002E5188 /* MainWindow.xib */,
@@ -157,14 +145,10 @@
 		8526CF5E110FC12E00ACE718 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				8510C17D10F9977A00428B1A /* GraffitiController.h */,
-				8510C17E10F9977A00428B1A /* GraffitiController.m */,
 				8510C22910F9A26900428B1A /* PotholesController.h */,
 				8510C22A10F9A26900428B1A /* PotholesController.m */,
 				8510C22C10F9A27A00428B1A /* HotlinesController.h */,
 				8510C22D10F9A27A00428B1A /* HotlinesController.m */,
-				28216C950DB411BC00E5133A /* LightsController.h */,
-				28216C960DB411BC00E5133A /* LightsController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -213,8 +197,6 @@
 			files = (
 				28AD73880D9D96C1002E5188 /* MainWindow.xib in Resources */,
 				282CCBFE0DB6C98000C4EA27 /* Potholes.xib in Resources */,
-				8553F85A10F852B50041DA8C /* Lights.xib in Resources */,
-				8553F86110F853360041DA8C /* Graffiti.xib in Resources */,
 				8553F86310F853400041DA8C /* Hotlines.xib in Resources */,
 				8526CEED110F7D5400ACE718 /* blueButton.png in Resources */,
 				8526CEEE110F7D5400ACE718 /* whiteButton.png in Resources */,
@@ -234,8 +216,6 @@
 			files = (
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* SeattleServiceAppDelegate.m in Sources */,
-				28216C970DB411BC00E5133A /* LightsController.m in Sources */,
-				8510C17F10F9977A00428B1A /* GraffitiController.m in Sources */,
 				8510C22B10F9A26900428B1A /* PotholesController.m in Sources */,
 				8510C22E10F9A27A00428B1A /* HotlinesController.m in Sources */,
 			);

@@ -10,8 +10,8 @@
 	};
 	1D3623250D0F684500981E51 /* SeattleServiceAppDelegate.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {2392, 982}}";
-			sepNavSelRange = "{1283, 174}";
+			sepNavIntBoundsRect = "{{0, 0}, {2392, 957}}";
+			sepNavSelRange = "{1461, 0}";
 			sepNavVisRange = "{0, 1945}";
 			sepNavWindowFrame = "{{193, 410}, {750, 558}}";
 		};
@@ -23,6 +23,12 @@
 		);
 	};
 	28216C950DB411BC00E5133A /* LightsController.h */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.h;
+		name = LightsController.h;
+		path = /Volumes/Drobo/Projects/SeattleService/Classes/LightsController.h;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1533, 556}}";
 			sepNavSelRange = "{181, 16}";
@@ -31,6 +37,12 @@
 		};
 	};
 	28216C960DB411BC00E5133A /* LightsController.m */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.objc;
+		name = LightsController.m;
+		path = /Volumes/Drobo/Projects/SeattleService/Classes/LightsController.m;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1533, 982}}";
 			sepNavSelRange = "{793, 0}";
@@ -48,7 +60,7 @@
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeBuildConfigurationName = Release;
 		activeExecutable = 856E33EF10F30104009D2603 /* SeattleService */;
-		activeSDKPreference = iphoneos3.1.2;
+		activeSDKPreference = iphonesimulator3.1.2;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* SeattleService */;
 		addToTargets = (
 			1D6058900D05DD3D006BFB54 /* SeattleService */,
@@ -282,6 +294,20 @@
 			850ABB291117D0F000891D3E /* PBXTextBookmark */ = 850ABB291117D0F000891D3E /* PBXTextBookmark */;
 			850ABB2B1117D1D200891D3E /* PBXTextBookmark */ = 850ABB2B1117D1D200891D3E /* PBXTextBookmark */;
 			850ABB301117D2DD00891D3E /* PBXTextBookmark */ = 850ABB301117D2DD00891D3E /* PBXTextBookmark */;
+			850ABB351117D55A00891D3E /* PBXTextBookmark */ = 850ABB351117D55A00891D3E /* PBXTextBookmark */;
+			850ABB361117D55A00891D3E /* PBXTextBookmark */ = 850ABB361117D55A00891D3E /* PBXTextBookmark */;
+			850ABB371117D55A00891D3E /* PBXBookmark */ = 850ABB371117D55A00891D3E /* PBXBookmark */;
+			850ABB381117D55A00891D3E /* PBXBookmark */ = 850ABB381117D55A00891D3E /* PBXBookmark */;
+			850ABB481117D64600891D3E /* PBXTextBookmark */ = 850ABB481117D64600891D3E /* PBXTextBookmark */;
+			850ABB491117D64600891D3E /* PBXBookmark */ = 850ABB491117D64600891D3E /* PBXBookmark */;
+			850ABB4A1117D64600891D3E /* PBXTextBookmark */ = 850ABB4A1117D64600891D3E /* PBXTextBookmark */;
+			850ABB4B1117D64600891D3E /* PBXTextBookmark */ = 850ABB4B1117D64600891D3E /* PBXTextBookmark */;
+			850ABB4C1117D64600891D3E /* PBXTextBookmark */ = 850ABB4C1117D64600891D3E /* PBXTextBookmark */;
+			850ABB4D1117D64600891D3E /* PBXTextBookmark */ = 850ABB4D1117D64600891D3E /* PBXTextBookmark */;
+			850ABB4E1117D64600891D3E /* PBXTextBookmark */ = 850ABB4E1117D64600891D3E /* PBXTextBookmark */;
+			850ABB4F1117D64600891D3E /* PBXTextBookmark */ = 850ABB4F1117D64600891D3E /* PBXTextBookmark */;
+			850ABB501117D68D00891D3E /* PBXTextBookmark */ = 850ABB501117D68D00891D3E /* PBXTextBookmark */;
+			850ABB531117D6C800891D3E /* PBXTextBookmark */ = 850ABB531117D6C800891D3E /* PBXTextBookmark */;
 			8510C1BC10F99C0C00428B1A = 8510C1BC10F99C0C00428B1A /* PBXTextBookmark */;
 			8510C26610F9A52700428B1A = 8510C26610F9A52700428B1A /* PBXTextBookmark */;
 			851773DD11176D6D00B6C999 = 851773DD11176D6D00B6C999 /* PBXBookmark */;
@@ -309,7 +335,7 @@
 	};
 	29B97316FDCFA39411CA2CEA /* main.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1414, 283}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1533, 982}}";
 			sepNavSelRange = "{357, 0}";
 			sepNavVisRange = "{0, 357}";
 		};
@@ -974,15 +1000,149 @@
 		vrLen = 1273;
 		vrLoc = 413;
 	};
+	850ABB351117D55A00891D3E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 85302A351117A797003BCCD2 /* UIAccelerometer.h */;
+		name = "UIAccelerometer.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	850ABB361117D55A00891D3E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8510C22A10F9A26900428B1A /* PotholesController.m */;
+		name = "PotholesController.m: 35";
+		rLen = 2;
+		rLoc = 1076;
+		rType = 0;
+		vrLen = 2765;
+		vrLoc = 269;
+	};
+	850ABB371117D55A00891D3E /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 8535C37A1112535D00243FA1 /* Graffiti.png */;
+	};
+	850ABB381117D55A00891D3E /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 8535C37A1112535D00243FA1 /* Graffiti.png */;
+	};
+	850ABB481117D64600891D3E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 85302A351117A797003BCCD2 /* UIAccelerometer.h */;
+		name = "UIAccelerometer.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	850ABB491117D64600891D3E /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 8535C37A1112535D00243FA1 /* Graffiti.png */;
+	};
+	850ABB4A1117D64600891D3E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8510C22910F9A26900428B1A /* PotholesController.h */;
+		name = "PotholesController.h: 36";
+		rLen = 0;
+		rLoc = 1273;
+		rType = 0;
+		vrLen = 1279;
+		vrLoc = 0;
+	};
+	850ABB4B1117D64600891D3E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8510C22A10F9A26900428B1A /* PotholesController.m */;
+		name = "PotholesController.m: 35";
+		rLen = 2;
+		rLoc = 1076;
+		rType = 0;
+		vrLen = 2724;
+		vrLoc = 0;
+	};
+	850ABB4C1117D64600891D3E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623240D0F684500981E51 /* SeattleServiceAppDelegate.h */;
+		name = "SeattleServiceAppDelegate.h: 13";
+		rLen = 0;
+		rLoc = 343;
+		rType = 0;
+		vrLen = 487;
+		vrLoc = 0;
+	};
+	850ABB4D1117D64600891D3E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 29B97316FDCFA39411CA2CEA /* main.m */;
+		name = "main.m: 18";
+		rLen = 0;
+		rLoc = 357;
+		rType = 0;
+		vrLen = 357;
+		vrLoc = 0;
+	};
+	850ABB4E1117D64600891D3E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* SeattleServiceAppDelegate.m */;
+		name = "SeattleServiceAppDelegate.m: 36";
+		rLen = 174;
+		rLoc = 1283;
+		rType = 0;
+		vrLen = 1945;
+		vrLoc = 0;
+	};
+	850ABB4F1117D64600891D3E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* SeattleServiceAppDelegate.m */;
+		name = "SeattleServiceAppDelegate.m: 40";
+		rLen = 0;
+		rLoc = 1461;
+		rType = 0;
+		vrLen = 1945;
+		vrLoc = 0;
+	};
+	850ABB501117D68D00891D3E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8510C22A10F9A26900428B1A /* PotholesController.m */;
+		name = "PotholesController.m: 35";
+		rLen = 0;
+		rLoc = 966;
+		rType = 0;
+		vrLen = 1273;
+		vrLoc = 413;
+	};
+	850ABB531117D6C800891D3E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8510C22A10F9A26900428B1A /* PotholesController.m */;
+		name = "PotholesController.m: 35";
+		rLen = 0;
+		rLoc = 966;
+		rType = 0;
+		vrLen = 1273;
+		vrLoc = 413;
+	};
 	8510C17D10F9977A00428B1A /* GraffitiController.h */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.h;
+		name = GraffitiController.h;
+		path = /Volumes/Drobo/Projects/SeattleService/Classes/GraffitiController.h;
+		sourceTree = "<absolute>";
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1533, 556}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1533, 982}}";
 			sepNavSelRange = "{0, 0}";
 			sepNavVisRange = "{0, 232}";
 			sepNavWindowFrame = "{{15, 353}, {1646, 820}}";
 		};
 	};
 	8510C17E10F9977A00428B1A /* GraffitiController.m */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.objc;
+		name = GraffitiController.m;
+		path = /Volumes/Drobo/Projects/SeattleService/Classes/GraffitiController.m;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1533, 982}}";
 			sepNavSelRange = "{859, 0}";
