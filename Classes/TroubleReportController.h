@@ -20,18 +20,23 @@
 
 #define kLabelTag 4096
 
-@interface TroubleReportController : UITableViewController <UITextFieldDelegate> {
+@interface TroubleReportController : UITableViewController <UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource> {
 	TroubleReport *troubleReport;
 	NSArray *fieldLabels;
 	NSMutableDictionary *tempValues;
 	UITextField *textFieldBeingEdited;
+	NSArray *pickerData;
+	UIPickerView *issuePickerView;
 }
 @property (nonatomic, retain) TroubleReport *troubleReport;
 @property (nonatomic, retain) NSArray *fieldLabels;
 @property (nonatomic, retain) NSMutableDictionary *tempValues;
 @property (nonatomic, retain) UITextField *textFieldBeingEdited;
+@property (nonatomic, retain) NSArray *pickerData;
+@property (nonatomic, retain) UIPickerView *issuePickerView;
 
 -(IBAction)cancel:(id)sender;
--(IBAction)save:(id)sender;
+-(IBAction)send:(id)sender;
 -(IBAction)textFieldDone:(id)sender;
+-(IBAction)pickIssue:(id)sender;
 @end

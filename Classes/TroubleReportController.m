@@ -15,11 +15,13 @@
 @synthesize fieldLabels;
 @synthesize tempValues;
 @synthesize textFieldBeingEdited;
+@synthesize pickerData;
+@synthesize issuePickerView;
 
 -(IBAction)cancel:(id)sender {
 	[self.navigationController popViewControllerAnimated:YES];
 }
--(IBAction)save:(id)sender {
+-(IBAction)send:(id)sender {
 	if (textFieldBeingEdited != nil) {
 		NSNumber *tagAsNum = [[NSNumber alloc]initWithInt:textFieldBeingEdited.tag];
 		[tempValues setObject:textFieldBeingEdited.text forKey: tagAsNum];
@@ -68,13 +70,18 @@
 	self.navigationItem.leftBarButtonItem = cancelButton;
 	[cancelButton release];
 	
-	UIBarButtonItem *saveButton = [[UIBarButtonItem alloc]initWithTitle:@"Send" style:UIBarButtonItemStyleDone target:self action:@selector(save:)];
+	UIBarButtonItem *saveButton = [[UIBarButtonItem alloc]initWithTitle:@"Send" style:UIBarButtonItemStyleDone target:self action:@selector(send:)];
 	self.navigationItem.rightBarButtonItem = saveButton;
 	[saveButton release];
 	
 	NSMutableDictionary *dict = [[NSMutableDictionary alloc]init];
 	self.tempValues = dict;
 	[dict release];
+	
+	array = [[NSArray alloc] initWithObjects:@"Minor Paving Repairs", @"Street Signs", @"Traffic Signals", @"Damaged Sidewalks", nil];
+	self.pickerData = array;
+	[array release];
+	
 	[super viewDidLoad];
 }
 -(void)dealloc {
@@ -127,7 +134,7 @@ cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 			if ([[tempValues allKeys] containsObject:rowAsNum])
 				textField.text = [tempValues  objectForKey:rowAsNum];
 			else
-				textField.text = troubleReport.typeOfRequest;
+				textField.text = [pickerData objectAtIndex:0];
 			break;
 		case kLocationOfProblemRowIndex:
 			if ([[tempValues allKeys] containsObject:rowAsNum])
@@ -168,13 +175,42 @@ cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	[rowAsNum release];
 	return cell;
 }
+#pragma mark Picker Data Source Methods
+- (NSInteger)numberOfComponentsInPickerView: (UIPickerView *)pickerView {
+	return 1;
+}
+
+- (NSInteger)pickerView: (UIPickerView *)pickerView
+numberOfRowsInComponent: (NSInteger)component {
+	return [pickerData count];
+}
 #pragma mark -
 #pragma mark Table Delegate Methods
 -(NSIndexPath *)tableView:(UITableView *)tableView
 willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	return nil;
+	NSUInteger row = [indexPath row];
+	UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+	if (row == kTypeOfRequestRowIndex && ![cell isSelected]) {
+		[self pickIssue:cell];
+		return indexPath;
+	}
+	else {
+		return nil;
+	}
 }
 #pragma mark Text Field Delegate Methods
+-(BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
+	UITableViewCell *cell = (UITableViewCell*)textField.superview.superview;
+	if (textField.tag == kTypeOfRequestRowIndex) {
+		if (![cell isSelected]) {
+			[cell setSelected:YES animated:YES];
+			[self pickIssue:cell];
+		}
+		return NO;
+	}
+	else
+		return YES;
+}
 -(void)textFieldDidBeginEditing:(UITextField *)textField {
 	self.textFieldBeingEdited = textField;
 }
@@ -182,5 +218,53 @@ willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	NSNumber *tagAsNum = [[NSNumber alloc] initWithInt:textField.tag];
 	[tempValues setObject:textField.text forKey:tagAsNum];
 	[tagAsNum release];
+}
+#pragma mark Picker Delegate Methods
+- (NSString *)pickerView: (UIPickerView *)pickerView
+			 titleForRow: (NSInteger)row forComponent:(NSInteger)component {
+	return [pickerData objectAtIndex:row];
+}
+
+- (void)pickerView:(UIPickerView *)pickerView
+	  didSelectRow:(NSInteger)row
+	   inComponent:(NSInteger)component {
+	[tempValues setObject:[pickerData objectAtIndex:row] forKey:kTypeOfRequestRowIndex];
+}
+
+-(void)dismissPicker:(UIPickerView *)pickerView {
+	[UIView beginAnimations:@"Picker Out" context:nil];
+	[UIView setAnimationDelegate:self];
+	[UIView setAnimationDidStopSelector:@selector(animationDidStop:finished:context:)];
+	[UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
+	[UIView setAnimationDuration:0.30f];
+	pickerView.transform = CGAffineTransformMakeTranslation(0, pickerView.frame.size.height);
+	[UIView commitAnimations];
+}
+
+-(void)animationDidStop:(NSString *)animationID finished:(NSNumber *)finished context:(void *)context {
+	[issuePickerView removeFromSuperview];
+}
+- (void)pickIssue:(id)sender {	
+	//TODO: Fix the pickIssue method after copying from old project
+	UITableViewCell *cell = sender;
+	//issueTypeButton.enabled = NO;
+	UIView *controllersView = [self view];
+	issuePickerView = [[UIPickerView alloc]init];
+	issuePickerView.autoresizingMask = (UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight);
+	issuePickerView.delegate = self;
+	issuePickerView.dataSource = self;
+	issuePickerView.showsSelectionIndicator = YES;
+	//[issuePickerView selectRow:[pickerData indexOfObject:issueTypeButton.titleLabel.text] inComponent:0 animated:NO];
+	CGRect frame = issuePickerView.frame;
+	frame.origin.y = controllersView.frame.size.height;
+	issuePickerView.frame = frame;
+	[controllersView addSubview:issuePickerView];
+	
+	[UIView beginAnimations:@"Picker In" context:nil];
+	[UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
+	[UIView setAnimationDuration:0.30f];
+	issuePickerView.transform = CGAffineTransformMakeTranslation(0, -(issuePickerView.frame.size.height));
+	[UIView commitAnimations];
+	
 }
 @end
