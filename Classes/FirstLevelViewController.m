@@ -7,7 +7,6 @@
 //
 
 #import "FirstLevelViewController.h"
-#import "SecondLevelViewController.h"
 #import "TroubleReportController.h"
 
 @implementation FirstLevelViewController
@@ -54,7 +53,7 @@ cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	}
 	//Configure the cell
 	NSUInteger row = [indexPath row];
-	SecondLevelViewController *controller = [controllers objectAtIndex:row];
+	UITableViewController *controller = [controllers objectAtIndex:row];
 	cell.textLabel.text = controller.title;
 	//cell.imageView.image = controller.rowImage;
 	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
@@ -65,7 +64,7 @@ cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 -(void)tableView:(UITableView *)tableView
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	NSUInteger row = [indexPath row];
-	SecondLevelViewController *nextController = [self.controllers objectAtIndex:row];
+	UITableViewController *nextController = [self.controllers objectAtIndex:row];
 	[self.navigationController pushViewController:nextController animated:YES];
 }
 

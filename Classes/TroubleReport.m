@@ -32,16 +32,15 @@
 #pragma mark -
 #pragma mark NSCoding
 -(void)encodeWithCoder:(NSCoder *)coder {
-	if (self = [super init]) {
-		[coder encodeObject:self.typeOfRequest forKey:@"TypeOfRequest"];
-		[coder encodeObject:self.locationOfProblem forKey:@"LocationOfProblem"];
-		[coder encodeObject:self.descriptionOfProblem forKey:@"DescriptionOfProblem"];
-		[coder encodeObject:self.userEmail forKey:@"UserEmail"];
-		[coder encodeObject:self.userName forKey:@"UserName"]; 
-		[coder encodeObject:self.userPhone forKey:@"UserPhone"];
-		[coder encodeObject:self.userAddress forKey:@"UserAddress"];
-		[coder encodeObject:self.userZip forKey:@"UserZip"];
-	}
+	[coder encodeObject:self.typeOfRequest forKey:@"TypeOfRequest"];
+	[coder encodeObject:self.locationOfProblem forKey:@"LocationOfProblem"];
+	[coder encodeObject:self.descriptionOfProblem forKey:@"DescriptionOfProblem"];
+	[coder encodeObject:self.userEmail forKey:@"UserEmail"];
+	[coder encodeObject:self.userName forKey:@"UserName"]; 
+	[coder encodeObject:self.userPhone forKey:@"UserPhone"];
+	[coder encodeObject:self.userAddress forKey:@"UserAddress"];
+	[coder encodeObject:self.userZip forKey:@"UserZip"];
+	
 }
 -(id)initWithCoder:(NSCoder *)coder {
 	if (self = [super init]) {

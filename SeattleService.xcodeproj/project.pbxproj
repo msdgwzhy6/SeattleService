@@ -15,7 +15,6 @@
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
 		8507EE7D1127D7DD006EA116 /* TroubleReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 8507EE7C1127D7DD006EA116 /* TroubleReport.m */; };
 		857F2A6111279ADB00501D68 /* FirstLevelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 857F2A6011279ADB00501D68 /* FirstLevelViewController.m */; };
-		857F2A6E11279D3200501D68 /* SecondLevelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 857F2A6D11279D3200501D68 /* SecondLevelViewController.m */; };
 		857F2A7B1127BF8B00501D68 /* TroubleReportController.m in Sources */ = {isa = PBXBuildFile; fileRef = 857F2A7A1127BF8B00501D68 /* TroubleReportController.m */; };
 		857F2B111127D32500501D68 /* FirstLevelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 857F2B101127D32500501D68 /* FirstLevelView.xib */; };
 /* End PBXBuildFile section */
@@ -34,8 +33,6 @@
 		8507EE7C1127D7DD006EA116 /* TroubleReport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TroubleReport.m; sourceTree = "<group>"; };
 		857F2A5F11279ADB00501D68 /* FirstLevelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstLevelViewController.h; sourceTree = "<group>"; };
 		857F2A6011279ADB00501D68 /* FirstLevelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstLevelViewController.m; sourceTree = "<group>"; };
-		857F2A6C11279D3200501D68 /* SecondLevelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondLevelViewController.h; sourceTree = "<group>"; };
-		857F2A6D11279D3200501D68 /* SecondLevelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondLevelViewController.m; sourceTree = "<group>"; };
 		857F2A791127BF8B00501D68 /* TroubleReportController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TroubleReportController.h; sourceTree = "<group>"; };
 		857F2A7A1127BF8B00501D68 /* TroubleReportController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TroubleReportController.m; sourceTree = "<group>"; };
 		857F2B101127D32500501D68 /* FirstLevelView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = FirstLevelView.xib; path = Classes/FirstLevelView.xib; sourceTree = "<group>"; };
@@ -63,8 +60,6 @@
 				1D3623250D0F684500981E51 /* SeattleServiceAppDelegate.m */,
 				857F2A5F11279ADB00501D68 /* FirstLevelViewController.h */,
 				857F2A6011279ADB00501D68 /* FirstLevelViewController.m */,
-				857F2A6C11279D3200501D68 /* SecondLevelViewController.h */,
-				857F2A6D11279D3200501D68 /* SecondLevelViewController.m */,
 				857F2A791127BF8B00501D68 /* TroubleReportController.h */,
 				857F2A7A1127BF8B00501D68 /* TroubleReportController.m */,
 				8507EE7B1127D7DD006EA116 /* TroubleReport.h */,
@@ -179,7 +174,6 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* SeattleServiceAppDelegate.m in Sources */,
 				857F2A6111279ADB00501D68 /* FirstLevelViewController.m in Sources */,
-				857F2A6E11279D3200501D68 /* SecondLevelViewController.m in Sources */,
 				857F2A7B1127BF8B00501D68 /* TroubleReportController.m in Sources */,
 				8507EE7D1127D7DD006EA116 /* TroubleReport.m in Sources */,
 			);

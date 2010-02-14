@@ -6,8 +6,9 @@
 //  Copyright 2010 jdwallace.com. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import "SecondLevelViewController.h"
+#import <Foundation/Foundation.h>
+
+@class TroubleReport;
 
 #define kNumberOfEditableRows 6
 #define kTypeOfRequestRowIndex 0
@@ -19,10 +20,8 @@
 
 #define kLabelTag 4096
 
-@class TroubleReport;
-
-@interface TroubleReportController : SecondLevelViewController <UITextFieldDelegate> {
-	TroubleReport troubleReport;
+@interface TroubleReportController : UITableViewController <UITextFieldDelegate> {
+	TroubleReport *troubleReport;
 	NSArray *fieldLabels;
 	NSMutableDictionary *tempValues;
 	UITextField *textFieldBeingEdited;
