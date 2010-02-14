@@ -8,49 +8,59 @@
 
 #import "TroubleReportController.h"
 #import "SeattleServiceAppDelegate.h"
+#import "TroubleReport.h"
 
 @implementation TroubleReportController
-@synthesize list;
--(void)viewDidLoad {
-	NSArray *array = [[NSArray alloc]initWithObjects:@"foo", @"bar", nil];
-	self.list = array;
-	[array release];
-	[super viewDidLoad];
+@synthesize troubleReport;
+@synthesize fieldLabels;
+@synthesize tempValues;
+@synthesize textFieldBeingEdited;
+
+-(IBAction)cancel:(id)sender {
+	[self.navigationController popViewControllerAnimated:YES];
 }
--(void)viewDidUnload {
-	self.list = nil;
-}
--(void)dealloc {
-	[list release];
-	[super dealloc];
-}
-#pragma mark -
-#pragma mark Table Data Source Methods
--(NSInteger)tableView:(UITableView *)tableView
-numberOfRowsInSection:(NSInteger)section {
-	return [list count];
-}
--(UITableViewCell *)tableView:(UITableView *)tableView
-cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	
-	static NSString * TroubleReportCellIdentifier = @"TroubleReportCellIdentifier";
-	
-	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:TroubleReportCellIdentifier];
-	
-	if (cell == nil) {
-		cell = [[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:TroubleReportCellIdentifier]autorelease];
+-(IBAction)save:(id)sender {
+	if (textFieldBeingEdited != nil) {
+		NSNumber *tagAsNum = [[NSNumber alloc]initWithInt:textFieldBeingEdited.tag];
+		[tempValues setObject:textFieldBeingEdited.text forKey: tagAsNum];
+		[tagAsNum release];
 	}
-	NSUInteger row = [indexPath row];
-	NSString *rowString = [list objectAtIndex:row];
-	cell.textLabel.text = rowString;
-	//cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
-	[rowString release];
-	return cell;
+	for (NSNumber *key in [tempValues allKeys]) {
+		switch ([key intValue]) {
+			case kTypeOfRequestRowIndex:
+				troubleReport.typeOfRequest = [tempValues objectForKey:key];
+				break;
+			case kLocationOfProblemRowIndex:
+				troubleReport.locationOfProblem = [tempValues objectForKey:key];
+				break;
+			case kDescriptionOfProblemRowIndex:
+				troubleReport.descriptionOfProblem = [tempValues objectForKey:key];
+				break;
+			case kUserNameRowIndex:
+				troubleReport.userName = [tempValues objectForKey:key];
+				break;
+			case kUserEmailRowIndex:
+				troubleReport.userEmail = [tempValues objectForKey:key];
+				break;
+			case kUserPhoneRowIndex:
+				troubleReport.userPhone = [tempValues objectForKey:key];
+				break;
+			default:
+				break;
+		}
+	}
+	[self.navigationController popViewControllerAnimated:YES];
+	
+	NSArray *allControllers = self.navigationController.viewControllers;
+	UITableViewController *parent = [allControllers lastObject];
+	[parent.tableView reloadData];
+}
+-(IBAction)textFieldDone:(id)sender {
+	[sender resignFirstResponder];
 }
 #pragma mark -
-#pragma mark Table Delegate Methods
--(void)tableView:(UITableView *)tableView
-didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	//do something
+-(void)viewDidLoad {
+	
 }
+
 @end
