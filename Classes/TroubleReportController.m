@@ -17,11 +17,15 @@
 @synthesize textFieldBeingEdited;
 @synthesize pickerData;
 @synthesize issuePickerView;
+@synthesize pickerField;
+@synthesize pickerCell;
 
 -(IBAction)cancel:(id)sender {
+	[pickerCell setSelected:NO animated:NO];
 	[self.navigationController popViewControllerAnimated:YES];
 }
 -(IBAction)send:(id)sender {
+	[pickerCell setSelected:NO animated:NO];
 	if (textFieldBeingEdited != nil) {
 		NSNumber *tagAsNum = [[NSNumber alloc]initWithInt:textFieldBeingEdited.tag];
 		[tempValues setObject:textFieldBeingEdited.text forKey: tagAsNum];
@@ -131,6 +135,9 @@ cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	NSNumber *rowAsNum = [[NSNumber alloc] initWithInt:row];
 	switch (row) {
 		case kTypeOfRequestRowIndex:
+			pickerField = textField;
+			pickerCell = cell;
+			cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 			if ([[tempValues allKeys] containsObject:rowAsNum])
 				textField.text = [tempValues  objectForKey:rowAsNum];
 			else
@@ -203,7 +210,7 @@ willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	UITableViewCell *cell = (UITableViewCell*)textField.superview.superview;
 	if (textField.tag == kTypeOfRequestRowIndex) {
 		if (![cell isSelected]) {
-			[cell setSelected:YES animated:YES];
+			[cell setSelected:YES animated:NO];
 			[self pickIssue:cell];
 		}
 		return NO;
@@ -228,7 +235,9 @@ willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 - (void)pickerView:(UIPickerView *)pickerView
 	  didSelectRow:(NSInteger)row
 	   inComponent:(NSInteger)component {
-	[tempValues setObject:[pickerData objectAtIndex:row] forKey:kTypeOfRequestRowIndex];
+	pickerField.text = [pickerData objectAtIndex:row];
+	[pickerCell setSelected:NO animated:NO];
+	[self dismissPicker:pickerView];
 }
 
 -(void)dismissPicker:(UIPickerView *)pickerView {
@@ -245,20 +254,18 @@ willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	[issuePickerView removeFromSuperview];
 }
 - (void)pickIssue:(id)sender {	
-	//TODO: Fix the pickIssue method after copying from old project
 	UITableViewCell *cell = sender;
-	//issueTypeButton.enabled = NO;
 	UIView *controllersView = [self view];
 	issuePickerView = [[UIPickerView alloc]init];
 	issuePickerView.autoresizingMask = (UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight);
 	issuePickerView.delegate = self;
 	issuePickerView.dataSource = self;
 	issuePickerView.showsSelectionIndicator = YES;
-	//[issuePickerView selectRow:[pickerData indexOfObject:issueTypeButton.titleLabel.text] inComponent:0 animated:NO];
+	[issuePickerView selectRow:[pickerData indexOfObject:pickerField.text] inComponent:0 animated:NO];
 	CGRect frame = issuePickerView.frame;
 	frame.origin.y = controllersView.frame.size.height;
 	issuePickerView.frame = frame;
-	[controllersView addSubview:issuePickerView];
+	[cell.superview.superview addSubview:issuePickerView];
 	
 	[UIView beginAnimations:@"Picker In" context:nil];
 	[UIView setAnimationCurve:UIViewAnimationCurveEaseIn];

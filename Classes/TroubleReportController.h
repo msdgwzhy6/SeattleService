@@ -27,6 +27,8 @@
 	UITextField *textFieldBeingEdited;
 	NSArray *pickerData;
 	UIPickerView *issuePickerView;
+	UITextField	*pickerField;
+	UITableViewCell *pickerCell;
 }
 @property (nonatomic, retain) TroubleReport *troubleReport;
 @property (nonatomic, retain) NSArray *fieldLabels;
@@ -34,6 +36,8 @@
 @property (nonatomic, retain) UITextField *textFieldBeingEdited;
 @property (nonatomic, retain) NSArray *pickerData;
 @property (nonatomic, retain) UIPickerView *issuePickerView;
+@property (nonatomic, retain) UITextField *pickerField;
+@property (nonatomic, retain) UITableViewCell *pickerCell;
 
 -(IBAction)cancel:(id)sender;
 -(IBAction)send:(id)sender;

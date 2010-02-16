@@ -19,7 +19,6 @@
 	//Trouble Report
 	TroubleReportController *troubleReportController = [[TroubleReportController alloc]initWithStyle:UITableViewStyleGrouped];
 	troubleReportController.title = @"Trouble Report";
-	//troubleReportController.rowImage = [UIImage imageNamed:@"troubleReportIcon.png"];
 	[array addObject:troubleReportController];
 	[troubleReportController release];
 	
@@ -55,7 +54,6 @@ cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	NSUInteger row = [indexPath row];
 	UITableViewController *controller = [controllers objectAtIndex:row];
 	cell.textLabel.text = controller.title;
-	//cell.imageView.image = controller.rowImage;
 	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 	return cell;
 }

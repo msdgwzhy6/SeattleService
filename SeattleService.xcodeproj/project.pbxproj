@@ -17,6 +17,7 @@
 		857F2A6111279ADB00501D68 /* FirstLevelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 857F2A6011279ADB00501D68 /* FirstLevelViewController.m */; };
 		857F2A7B1127BF8B00501D68 /* TroubleReportController.m in Sources */ = {isa = PBXBuildFile; fileRef = 857F2A7A1127BF8B00501D68 /* TroubleReportController.m */; };
 		857F2B111127D32500501D68 /* FirstLevelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 857F2B101127D32500501D68 /* FirstLevelView.xib */; };
+		85A38135112A4A85009FF185 /* TroubleReport.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85A38134112A4A85009FF185 /* TroubleReport.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		857F2A791127BF8B00501D68 /* TroubleReportController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TroubleReportController.h; sourceTree = "<group>"; };
 		857F2A7A1127BF8B00501D68 /* TroubleReportController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TroubleReportController.m; sourceTree = "<group>"; };
 		857F2B101127D32500501D68 /* FirstLevelView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = FirstLevelView.xib; path = Classes/FirstLevelView.xib; sourceTree = "<group>"; };
+		85A38134112A4A85009FF185 /* TroubleReport.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TroubleReport.xib; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* SeattleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SeattleService-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -56,6 +58,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				85A38134112A4A85009FF185 /* TroubleReport.xib */,
 				1D3623240D0F684500981E51 /* SeattleServiceAppDelegate.h */,
 				1D3623250D0F684500981E51 /* SeattleServiceAppDelegate.m */,
 				857F2A5F11279ADB00501D68 /* FirstLevelViewController.h */,
@@ -161,6 +164,7 @@
 			files = (
 				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
 				857F2B111127D32500501D68 /* FirstLevelView.xib in Resources */,
+				85A38135112A4A85009FF185 /* TroubleReport.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
