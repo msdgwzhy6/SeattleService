@@ -18,6 +18,8 @@
 		857F2A7B1127BF8B00501D68 /* TroubleReportController.m in Sources */ = {isa = PBXBuildFile; fileRef = 857F2A7A1127BF8B00501D68 /* TroubleReportController.m */; };
 		857F2B111127D32500501D68 /* FirstLevelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 857F2B101127D32500501D68 /* FirstLevelView.xib */; };
 		85A38135112A4A85009FF185 /* TroubleReport.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85A38134112A4A85009FF185 /* TroubleReport.xib */; };
+		85D5EA301130B91000726D0E /* PotholeReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D5EA2F1130B91000726D0E /* PotholeReport.m */; };
+		85D5EA4A1130C18700726D0E /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D5EA491130C18700726D0E /* Location.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,14 +32,18 @@
 		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* SeattleService_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeattleService_Prefix.pch; sourceTree = "<group>"; };
-		8507EE7B1127D7DD006EA116 /* TroubleReport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TroubleReport.h; sourceTree = "<group>"; };
-		8507EE7C1127D7DD006EA116 /* TroubleReport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TroubleReport.m; sourceTree = "<group>"; };
+		8507EE7B1127D7DD006EA116 /* TroubleReport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TroubleReport.h; path = Classes/TroubleReport.h; sourceTree = "<group>"; };
+		8507EE7C1127D7DD006EA116 /* TroubleReport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TroubleReport.m; path = Classes/TroubleReport.m; sourceTree = "<group>"; };
 		857F2A5F11279ADB00501D68 /* FirstLevelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstLevelViewController.h; sourceTree = "<group>"; };
 		857F2A6011279ADB00501D68 /* FirstLevelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstLevelViewController.m; sourceTree = "<group>"; };
 		857F2A791127BF8B00501D68 /* TroubleReportController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TroubleReportController.h; sourceTree = "<group>"; };
 		857F2A7A1127BF8B00501D68 /* TroubleReportController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TroubleReportController.m; sourceTree = "<group>"; };
 		857F2B101127D32500501D68 /* FirstLevelView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = FirstLevelView.xib; path = Classes/FirstLevelView.xib; sourceTree = "<group>"; };
-		85A38134112A4A85009FF185 /* TroubleReport.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TroubleReport.xib; sourceTree = "<group>"; };
+		85A38134112A4A85009FF185 /* TroubleReport.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TroubleReport.xib; path = Classes/TroubleReport.xib; sourceTree = "<group>"; };
+		85D5EA2E1130B91000726D0E /* PotholeReport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PotholeReport.h; path = Classes/PotholeReport.h; sourceTree = "<group>"; };
+		85D5EA2F1130B91000726D0E /* PotholeReport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PotholeReport.m; path = Classes/PotholeReport.m; sourceTree = "<group>"; };
+		85D5EA481130C18700726D0E /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
+		85D5EA491130C18700726D0E /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* SeattleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SeattleService-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -58,15 +64,12 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				85A38134112A4A85009FF185 /* TroubleReport.xib */,
 				1D3623240D0F684500981E51 /* SeattleServiceAppDelegate.h */,
 				1D3623250D0F684500981E51 /* SeattleServiceAppDelegate.m */,
 				857F2A5F11279ADB00501D68 /* FirstLevelViewController.h */,
 				857F2A6011279ADB00501D68 /* FirstLevelViewController.m */,
 				857F2A791127BF8B00501D68 /* TroubleReportController.h */,
 				857F2A7A1127BF8B00501D68 /* TroubleReportController.m */,
-				8507EE7B1127D7DD006EA116 /* TroubleReport.h */,
-				8507EE7C1127D7DD006EA116 /* TroubleReport.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -82,6 +85,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				85D5EA371130B91A00726D0E /* DTO */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -103,6 +107,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				85A38134112A4A85009FF185 /* TroubleReport.xib */,
 				857F2B101127D32500501D68 /* FirstLevelView.xib */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* SeattleService-Info.plist */,
@@ -118,6 +123,19 @@
 				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		85D5EA371130B91A00726D0E /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				8507EE7B1127D7DD006EA116 /* TroubleReport.h */,
+				8507EE7C1127D7DD006EA116 /* TroubleReport.m */,
+				85D5EA2E1130B91000726D0E /* PotholeReport.h */,
+				85D5EA2F1130B91000726D0E /* PotholeReport.m */,
+				85D5EA481130C18700726D0E /* Location.h */,
+				85D5EA491130C18700726D0E /* Location.m */,
+			);
+			name = DTO;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,6 +198,8 @@
 				857F2A6111279ADB00501D68 /* FirstLevelViewController.m in Sources */,
 				857F2A7B1127BF8B00501D68 /* TroubleReportController.m in Sources */,
 				8507EE7D1127D7DD006EA116 /* TroubleReport.m in Sources */,
+				85D5EA301130B91000726D0E /* PotholeReport.m in Sources */,
+				85D5EA4A1130C18700726D0E /* Location.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

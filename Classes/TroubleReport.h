@@ -7,25 +7,33 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Location.h"
+
+typedef enum {
+	kPavingRepair,
+	kSignsAndSignals,
+	kDamagedSidewalk,
+	kGraffitiReport,
+	kStreetLight
+} TypeOfRequest;
 
 @interface TroubleReport : NSObject <NSCoding> {
-	NSString	*typeOfRequest;
-	NSString	*locationOfProblem;
+	TypeOfRequest	typeOfRequest;
+	Location	*locationOfProblem;
 	NSString	*descriptionOfProblem;
 	NSString	*userEmail;
-	NSString	*userName;
+	NSString	*userFirstName;
+	NSString	*userLastName;
 	NSString	*userPhone;
-	NSString	*userAddress;
-	NSString	*userZip;
-
+	Location	*userAddress;
 }
-@property (nonatomic, retain) NSString	*typeOfRequest;
-@property (nonatomic, retain) NSString	*locationOfProblem;
+@property (nonatomic) TypeOfRequest	typeOfRequest;
+@property (nonatomic, retain) Location	*locationOfProblem;
 @property (nonatomic, retain) NSString	*descriptionOfProblem;
 @property (nonatomic, retain) NSString	*userEmail;
-@property (nonatomic, retain) NSString	*userName;
+@property (nonatomic, retain) NSString	*userFirstName;
+@property (nonatomic, retain) NSString	*userLastName;
 @property (nonatomic, retain) NSString	*userPhone;
-@property (nonatomic, retain) NSString	*userAddress;
-@property (nonatomic, retain) NSString	*userZip;
+@property (nonatomic, retain) Location	*userAddress;
 
 @end
