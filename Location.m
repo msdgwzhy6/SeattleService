@@ -28,6 +28,21 @@
 	[zipCode release];
 	[super dealloc];
 }
+-(id)init{
+	if (self = [super init]) {
+		isPublicProperty = TRUE;
+		addressNumber = 0;
+		streetPrefix = kNorth;
+		streetName = @"";
+		streetType = kStreet;
+		streetSuffix = kNorth;
+		intersectionFirst = @"";
+		intersectionSecond = @"";
+		corner = kNorth;
+		zipCode = @"";
+	}	
+	return self;
+}
 
 #pragma mark -
 #pragma mark NSCoding
@@ -42,7 +57,6 @@
 	[coder encodeObject:self.intersectionSecond forKey:@"IntersectionSecond"];
 	[coder encodeInt:self.corner forKey:@"Corner"];
 	[coder encodeObject:self.zipCode forKey:@"ZipCode"];
-	
 }
 -(id)initWithCoder:(NSCoder *)coder {
 	if (self = [super init]) {
@@ -56,7 +70,6 @@
 		self.intersectionSecond = [coder decodeObjectForKey:@"IntersectionSecond"];
 		self.corner = [coder decodeIntForKey:@"Corner"];
 		self.zipCode = [coder decodeObjectForKey:@"ZipCode"];
-
 	}
 	return self;
 }

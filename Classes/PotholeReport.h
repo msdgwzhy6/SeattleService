@@ -9,9 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "TroubleReport.h"
 
-
 @interface PotholeReport : TroubleReport <NSCoding> {
 
 }
-
+-(id)initWithType:(TypeOfRequest)requestType;
 @end

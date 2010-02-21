@@ -8,17 +8,24 @@
 
 #import "TroubleReportController.h"
 #import "SeattleServiceAppDelegate.h"
-#import "TroubleReport.h"
+#import "TroubleReports.h"
+#import "PotholeReport.h"
+
+@interface TroubleReportController()
+- (int)findGlobalRow:(NSIndexPath *)indexPath;
+@end
 
 @implementation TroubleReportController
-@synthesize troubleReport;
+@synthesize troubleReports;
 @synthesize fieldLabels;
+@synthesize fieldLookup;
 @synthesize tempValues;
-@synthesize textFieldBeingEdited;
+//@synthesize textFieldBeingEdited;
 @synthesize pickerData;
 @synthesize issuePickerView;
 @synthesize pickerField;
 @synthesize pickerCell;
+@synthesize tableDescription;
 
 -(IBAction)cancel:(id)sender {
 	[pickerCell setSelected:NO animated:NO];
@@ -26,35 +33,7 @@
 }
 -(IBAction)send:(id)sender {
 	[pickerCell setSelected:NO animated:NO];
-	if (textFieldBeingEdited != nil) {
-		NSNumber *tagAsNum = [[NSNumber alloc]initWithInt:textFieldBeingEdited.tag];
-		[tempValues setObject:textFieldBeingEdited.text forKey: tagAsNum];
-		[tagAsNum release];
-	}
-	for (NSNumber *key in [tempValues allKeys]) {
-		switch ([key intValue]) {
-			case kTypeOfRequestRowIndex:
-				troubleReport.typeOfRequest = [tempValues objectForKey:key];
-				break;
-			case kLocationOfProblemRowIndex:
-				troubleReport.locationOfProblem = [tempValues objectForKey:key];
-				break;
-			case kDescriptionOfProblemRowIndex:
-				troubleReport.descriptionOfProblem = [tempValues objectForKey:key];
-				break;
-			case kUserNameRowIndex:
-				troubleReport.userName = [tempValues objectForKey:key];
-				break;
-			case kUserEmailRowIndex:
-				troubleReport.userEmail = [tempValues objectForKey:key];
-				break;
-			case kUserPhoneRowIndex:
-				troubleReport.userPhone = [tempValues objectForKey:key];
-				break;
-			default:
-				break;
-		}
-	}
+	//submit report
 	[self.navigationController popViewControllerAnimated:YES];
 	
 	NSArray *allControllers = self.navigationController.viewControllers;
@@ -66,10 +45,42 @@
 }
 #pragma mark -
 -(void)viewDidLoad {
-	NSArray *array = [[NSArray alloc]initWithObjects:@"Type:", @"Location:", @"Detail:", @"Name:", @"Email:", @"Phone:", nil];
+	troubleReports = [[TroubleReports alloc]init];
+	TypeOfRequest typeOfRequest = [[troubleReports.allReports objectAtIndex:troubleReports.selectedReportIndex] typeOfRequest];
+	NSMutableDictionary	*fieldsDict = [[NSMutableDictionary alloc] init];
+	NSMutableArray *array;
+	switch (typeOfRequest) {
+		case kPavingRepair:
+		case kDamagedSign:
+		case kDamagedSignal:
+		case kDamagedSidewalk:
+			array = [NSMutableArray arrayWithObjects:@"Type:", @"First Name:", @"Last Name:", @"Email:", @"Phone:", @"Location", @"Detail:", nil];
+			PotholeReport *thisReport = (PotholeReport *)[troubleReports.allReports objectAtIndex:troubleReports.selectedReportIndex];
+			[fieldsDict setValue:thisReport.requestName forKey:@"Type:"];
+			[fieldsDict setObject:[[troubleReports.allReports objectAtIndex:troubleReports.selectedReportIndex] userFirstName]	forKey:@"First Name:"];
+			[fieldsDict setObject:[[troubleReports.allReports objectAtIndex:troubleReports.selectedReportIndex] userLastName]	forKey:@"Last Name:"];
+			[fieldsDict setObject:[[troubleReports.allReports objectAtIndex:troubleReports.selectedReportIndex] userEmail]	forKey:@"Email:"];
+			[fieldsDict setObject:[[troubleReports.allReports objectAtIndex:troubleReports.selectedReportIndex] userPhone]	forKey:@"Phone:"];
+			[fieldsDict setObject:[[[troubleReports.allReports objectAtIndex:troubleReports.selectedReportIndex] locationOfProblem]  streetName]	forKey:@"Location:"];
+			[fieldsDict setObject:[[troubleReports.allReports objectAtIndex:troubleReports.selectedReportIndex] descriptionOfProblem]	forKey:@"Detail:"];
+			tableDescription.NumberOfEditableRows = 7;
+			tableDescription.RowsInUserSection = 4;
+			tableDescription.RowsInReportSection = 2;
+			break;
+		case kGraffitiReport:
+			//Define Graffiti Table Labels
+			break;
+		case kStreetLight:
+			//Define StreetLight Table Labels
+			break;
+		default:
+			break;
+	}
 	self.fieldLabels = array;
-	[array release];
-	
+	[fieldLabels retain];
+	self.fieldLookup = fieldsDict;
+	[fieldsDict release];
+
 	UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc]initWithTitle:@"Cancel" style:UIBarButtonItemStylePlain target:self action:@selector(cancel:)];
 	self.navigationItem.leftBarButtonItem = cancelButton;
 	[cancelButton release];
@@ -82,24 +93,45 @@
 	self.tempValues = dict;
 	[dict release];
 	
-	array = [[NSArray alloc] initWithObjects:@"Minor Paving Repairs", @"Street Signs", @"Traffic Signals", @"Damaged Sidewalks", nil];
-	self.pickerData = array;
-	[array release];
-	
+	NSMutableArray *trArray = [[NSMutableArray alloc]init];
+	for (TroubleReport *tR in troubleReports.allReports) {
+		[trArray addObject:tR.requestName];
+	}
+	self.pickerData = trArray;
+	[typeOfRequest release];
 	[super viewDidLoad];
 }
 -(void)dealloc {
-	[textFieldBeingEdited release];
+	//[textFieldBeingEdited release];
 	[tempValues release];
-	[troubleReport release];
+	[troubleReports release];
 	[fieldLabels release];
+	[pickerData release];
+	[issuePickerView release];
+	[pickerField release];
+	[pickerCell release];
 	[super dealloc];
 }
 #pragma mark -
 #pragma mark Table Data Source Methods
 -(NSInteger)tableView:(UITableView *)tableView
 numberOfRowsInSection:(NSInteger)section {
-	return kNumberOfEditableRows;
+	switch (section) {
+		case 0:
+			return 1;
+			break;
+		case 1:
+			return tableDescription.RowsInUserSection;
+			break;
+		case 2:
+			return tableDescription.RowsInReportSection;
+		default:
+			return 1;
+			break;
+	}
+}
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+	return 3;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView
 cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -123,70 +155,48 @@ cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 		[textField addTarget:self action:@selector(textFieldDone:) forControlEvents:UIControlEventEditingDidEndOnExit];
 		[cell.contentView addSubview:textField];
 	}
-	NSUInteger row = [indexPath row];
-	
+	int globalRow = [self findGlobalRow:indexPath];
 	UILabel *label = (UILabel *)[cell viewWithTag:kLabelTag];
 	UITextField *textField = nil;
 	for (UIView *oneView in cell.contentView.subviews) {
 		if ([oneView isMemberOfClass:[UITextField class]])
 			textField = (UITextField *)oneView;
 	}
-	label.text = [fieldLabels objectAtIndex:row];
-	NSNumber *rowAsNum = [[NSNumber alloc] initWithInt:row];
-	switch (row) {
-		case kTypeOfRequestRowIndex:
-			pickerField = textField;
-			pickerCell = cell;
-			cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-			if ([[tempValues allKeys] containsObject:rowAsNum])
-				textField.text = [tempValues  objectForKey:rowAsNum];
-			else
-				textField.text = [pickerData objectAtIndex:0];
-			break;
-		case kLocationOfProblemRowIndex:
-			if ([[tempValues allKeys] containsObject:rowAsNum])
-				textField.text = [tempValues  objectForKey:rowAsNum];
-			else
-				textField.text = troubleReport.locationOfProblem;
-			break;
-		case kDescriptionOfProblemRowIndex:
-			if ([[tempValues allKeys] containsObject:rowAsNum])
-				textField.text = [tempValues  objectForKey:rowAsNum];
-			else
-				textField.text = troubleReport.descriptionOfProblem;
-			break;
-		case kUserNameRowIndex:
-			if ([[tempValues allKeys] containsObject:rowAsNum])
-				textField.text = [tempValues  objectForKey:rowAsNum];
-			else
-				textField.text = troubleReport.userName;
-			break;
-		case kUserEmailRowIndex:
-			if ([[tempValues allKeys] containsObject:rowAsNum])
-				textField.text = [tempValues  objectForKey:rowAsNum];
-			else
-				textField.text = troubleReport.userEmail;
-			break;
-		case kUserPhoneRowIndex:
-			if ([[tempValues allKeys] containsObject:rowAsNum])
-				textField.text = [tempValues  objectForKey:rowAsNum];
-			else
-				textField.text = troubleReport.userPhone;
-			break;
-		default:
-			break;
+	label.text = [fieldLabels objectAtIndex:globalRow];
+	NSNumber *rowAsNum = [[NSNumber alloc] initWithInt:globalRow];
+	
+	if (globalRow == 0) {
+		//pickerField = textField;
+		pickerCell = cell;
+		cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+		textField.text = [fieldLookup valueForKey:[fieldLabels objectAtIndex:globalRow]];
+	} else {
+		textField.text = [fieldLookup valueForKey:[fieldLabels objectAtIndex:globalRow]];
 	}
-	if (textFieldBeingEdited == textField)
-		textFieldBeingEdited = nil;
-	textField.tag = row;
+	
+	textField.tag = globalRow;
 	[rowAsNum release];
 	return cell;
+}
+-(int)findGlobalRow:(NSIndexPath *)indexPath {
+	int globalRow;
+	switch (indexPath.section) {
+		case 1:
+			globalRow = indexPath.row +1;
+			break;
+		case 2:
+			globalRow = 1 + tableDescription.RowsInUserSection + indexPath.row;
+			break;
+		default:
+			globalRow = indexPath.row;
+			break;
+	}
+	return globalRow;
 }
 #pragma mark Picker Data Source Methods
 - (NSInteger)numberOfComponentsInPickerView: (UIPickerView *)pickerView {
 	return 1;
 }
-
 - (NSInteger)pickerView: (UIPickerView *)pickerView
 numberOfRowsInComponent: (NSInteger)component {
 	return [pickerData count];
@@ -195,9 +205,9 @@ numberOfRowsInComponent: (NSInteger)component {
 #pragma mark Table Delegate Methods
 -(NSIndexPath *)tableView:(UITableView *)tableView
 willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	NSUInteger row = [indexPath row];
+	int globalRow = [self findGlobalRow:indexPath];
 	UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-	if (row == kTypeOfRequestRowIndex && ![cell isSelected]) {
+	if (globalRow == 0 && ![cell isSelected]) {
 		[self pickIssue:cell];
 		return indexPath;
 	}
@@ -208,7 +218,7 @@ willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 #pragma mark Text Field Delegate Methods
 -(BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
 	UITableViewCell *cell = (UITableViewCell*)textField.superview.superview;
-	if (textField.tag == kTypeOfRequestRowIndex) {
+	if (textField.tag == 0) {
 		if (![cell isSelected]) {
 			[cell setSelected:YES animated:NO];
 			[self pickIssue:cell];
@@ -219,23 +229,29 @@ willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 		return YES;
 }
 -(void)textFieldDidBeginEditing:(UITextField *)textField {
-	self.textFieldBeingEdited = textField;
 }
 -(void)textFieldDidEndEditing:(UITextField *)textField {
 	NSNumber *tagAsNum = [[NSNumber alloc] initWithInt:textField.tag];
-	[tempValues setObject:textField.text forKey:tagAsNum];
+	UILabel *label = nil;
+	for (UIView *oneView in textField.superview.subviews) {
+		if ([oneView isMemberOfClass:[UILabel class]])
+			label = (UILabel *)oneView;
+	}
+	//TODO: [fieldLookup objectForKey:label.text] = textField.text;
 	[tagAsNum release];
 }
 #pragma mark Picker Delegate Methods
 - (NSString *)pickerView: (UIPickerView *)pickerView
 			 titleForRow: (NSInteger)row forComponent:(NSInteger)component {
+	//return [[troubleReports.allReports objectAtIndex:row] requestName];
 	return [pickerData objectAtIndex:row];
 }
 
 - (void)pickerView:(UIPickerView *)pickerView
 	  didSelectRow:(NSInteger)row
 	   inComponent:(NSInteger)component {
-	pickerField.text = [pickerData objectAtIndex:row];
+	troubleReports.selectedReportIndex = row;
+	pickerField.text = [[troubleReports.allReports objectAtIndex:troubleReports.selectedReportIndex] requestName];
 	[pickerCell setSelected:NO animated:NO];
 	[self dismissPicker:pickerView];
 }
@@ -261,7 +277,8 @@ willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	issuePickerView.delegate = self;
 	issuePickerView.dataSource = self;
 	issuePickerView.showsSelectionIndicator = YES;
-	[issuePickerView selectRow:[pickerData indexOfObject:pickerField.text] inComponent:0 animated:NO];
+	//[issuePickerView selectRow:[pickerData indexOfObject:pickerField.text] inComponent:0 animated:NO];
+	[issuePickerView selectRow:[troubleReports selectedReportIndex] inComponent:0 animated:NO];
 	CGRect frame = issuePickerView.frame;
 	frame.origin.y = controllersView.frame.size.height;
 	issuePickerView.frame = frame;

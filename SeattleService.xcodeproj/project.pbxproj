@@ -13,6 +13,7 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
+		850549091130EB640009043C /* TroubleReports.m in Sources */ = {isa = PBXBuildFile; fileRef = 850549081130EB640009043C /* TroubleReports.m */; };
 		8507EE7D1127D7DD006EA116 /* TroubleReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 8507EE7C1127D7DD006EA116 /* TroubleReport.m */; };
 		857F2A6111279ADB00501D68 /* FirstLevelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 857F2A6011279ADB00501D68 /* FirstLevelViewController.m */; };
 		857F2A7B1127BF8B00501D68 /* TroubleReportController.m in Sources */ = {isa = PBXBuildFile; fileRef = 857F2A7A1127BF8B00501D68 /* TroubleReportController.m */; };
@@ -32,6 +33,8 @@
 		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* SeattleService_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeattleService_Prefix.pch; sourceTree = "<group>"; };
+		850549071130EB640009043C /* TroubleReports.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TroubleReports.h; sourceTree = "<group>"; };
+		850549081130EB640009043C /* TroubleReports.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TroubleReports.m; sourceTree = "<group>"; };
 		8507EE7B1127D7DD006EA116 /* TroubleReport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TroubleReport.h; path = Classes/TroubleReport.h; sourceTree = "<group>"; };
 		8507EE7C1127D7DD006EA116 /* TroubleReport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TroubleReport.m; path = Classes/TroubleReport.m; sourceTree = "<group>"; };
 		857F2A5F11279ADB00501D68 /* FirstLevelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstLevelViewController.h; sourceTree = "<group>"; };
@@ -64,12 +67,10 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				850548EA1130CF880009043C /* Controllers */,
+				85D5EA371130B91A00726D0E /* DTO */,
 				1D3623240D0F684500981E51 /* SeattleServiceAppDelegate.h */,
 				1D3623250D0F684500981E51 /* SeattleServiceAppDelegate.m */,
-				857F2A5F11279ADB00501D68 /* FirstLevelViewController.h */,
-				857F2A6011279ADB00501D68 /* FirstLevelViewController.m */,
-				857F2A791127BF8B00501D68 /* TroubleReportController.h */,
-				857F2A7A1127BF8B00501D68 /* TroubleReportController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -85,7 +86,6 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				85D5EA371130B91A00726D0E /* DTO */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -125,6 +125,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		850548EA1130CF880009043C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				857F2A5F11279ADB00501D68 /* FirstLevelViewController.h */,
+				857F2A6011279ADB00501D68 /* FirstLevelViewController.m */,
+				857F2A791127BF8B00501D68 /* TroubleReportController.h */,
+				857F2A7A1127BF8B00501D68 /* TroubleReportController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 		85D5EA371130B91A00726D0E /* DTO */ = {
 			isa = PBXGroup;
 			children = (
@@ -134,8 +145,11 @@
 				85D5EA2F1130B91000726D0E /* PotholeReport.m */,
 				85D5EA481130C18700726D0E /* Location.h */,
 				85D5EA491130C18700726D0E /* Location.m */,
+				850549071130EB640009043C /* TroubleReports.h */,
+				850549081130EB640009043C /* TroubleReports.m */,
 			);
 			name = DTO;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,6 +214,7 @@
 				8507EE7D1127D7DD006EA116 /* TroubleReport.m in Sources */,
 				85D5EA301130B91000726D0E /* PotholeReport.m in Sources */,
 				85D5EA4A1130C18700726D0E /* Location.m in Sources */,
+				850549091130EB640009043C /* TroubleReports.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

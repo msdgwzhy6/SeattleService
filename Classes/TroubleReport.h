@@ -7,11 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Location.h"
+@class Location;
 
 typedef enum {
 	kPavingRepair,
-	kSignsAndSignals,
+	kDamagedSign,
+	kDamagedSignal,
 	kDamagedSidewalk,
 	kGraffitiReport,
 	kStreetLight
@@ -19,6 +20,7 @@ typedef enum {
 
 @interface TroubleReport : NSObject <NSCoding> {
 	TypeOfRequest	typeOfRequest;
+	NSString	*requestName;
 	Location	*locationOfProblem;
 	NSString	*descriptionOfProblem;
 	NSString	*userEmail;
@@ -28,6 +30,7 @@ typedef enum {
 	Location	*userAddress;
 }
 @property (nonatomic) TypeOfRequest	typeOfRequest;
+@property (nonatomic, retain) NSString	*requestName;
 @property (nonatomic, retain) Location	*locationOfProblem;
 @property (nonatomic, retain) NSString	*descriptionOfProblem;
 @property (nonatomic, retain) NSString	*userEmail;

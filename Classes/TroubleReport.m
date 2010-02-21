@@ -7,11 +7,13 @@
 //
 
 #import "TroubleReport.h"
-@class Location;
+#import "Location.h"
+
 
 @implementation TroubleReport
 
 @synthesize typeOfRequest;
+@synthesize requestName;
 @synthesize locationOfProblem;
 @synthesize descriptionOfProblem;
 @synthesize userEmail;
@@ -22,6 +24,7 @@
 
 -(void)dealloc {
 	[locationOfProblem release];
+	[requestName release];
 	[descriptionOfProblem release];
 	[userEmail release];
 	[userFirstName release];
@@ -30,11 +33,23 @@
 	[userAddress release];
 	[super dealloc];
 }
+-(id)init{
+	if (self = [super init]) {
+		userFirstName = @"";
+		userLastName = @"";
+		userEmail = @"";
+		userPhone = @"";
+		locationOfProblem = [[Location alloc]init];
+		descriptionOfProblem = @"";
+	}	
+	return self;
+}
 
 #pragma mark -
 #pragma mark NSCoding
 -(void)encodeWithCoder:(NSCoder *)coder {
 	[coder encodeInt:self.typeOfRequest forKey:@"TypeOfRequest"];
+	[coder encodeObject:self.requestName forKey:@"RequestName"];
 	[coder encodeObject:self.locationOfProblem forKey:@"LocationOfProblem"];
 	[coder encodeObject:self.descriptionOfProblem forKey:@"DescriptionOfProblem"];
 	[coder encodeObject:self.userEmail forKey:@"UserEmail"];
@@ -46,6 +61,7 @@
 -(id)initWithCoder:(NSCoder *)coder {
 	if (self = [super init]) {
 		self.typeOfRequest = [coder decodeIntForKey:@"TypeOfRequest"];
+		self.requestName = [coder decodeObjectForKey:@"RequestName"];
 		self.descriptionOfProblem = [coder decodeObjectForKey:@"DescriptionOfProblem"];
 		self.userEmail = [coder decodeObjectForKey:@"UserEmail"];
 		self.userFirstName = [coder decodeObjectForKey:@"UserFirstName"]; 

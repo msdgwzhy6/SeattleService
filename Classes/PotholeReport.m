@@ -8,9 +8,31 @@
 
 #import "PotholeReport.h"
 
-
 @implementation PotholeReport
 
+-(id)initWithType:(TypeOfRequest)requestType{
+if (self = [super init])
+	{
+		self.typeOfRequest = requestType;
+		switch (requestType) {
+			case kPavingRepair:
+				self.requestName = @"Minor Paving Repairs";
+				break;
+			case kDamagedSign:
+				self.requestName = @"Street Sign";
+				break;
+			case kDamagedSignal:
+				self.requestName = @"Traffic Signal";
+				break;
+			case kDamagedSidewalk:
+				self.requestName = @"Damaged Sidewalk";
+				break;
+			default:
+				break;
+		}
+	}
+	return self;
+}
 -(void)dealloc {
 	[super dealloc];
 }
@@ -20,13 +42,7 @@
 -(void)encodeWithCoder:(NSCoder *)coder {	
 }
 -(id)initWithCoder:(NSCoder *)coder {
-	/*
-	if (self = [super init]) {
-	//decode here
-	}
-	*/
 	return self;
 }
-
 
 @end
